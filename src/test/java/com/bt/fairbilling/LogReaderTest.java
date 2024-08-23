@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,7 +20,7 @@ class LogReaderTest {
 		logReader = new LogReaderImpl();
 		System.setErr(new PrintStream(outContent));
 	}
-	
+
 	@Test
 	void testFileDoesNotExist() {
 		String testLogPath = "randomFilePath.txt";
@@ -36,10 +35,10 @@ class LogReaderTest {
 
 	@Test
 	void testLoadFile() {
-        String testLogPath = "src/test/resources/log.txt";
-        
-        String expectedOutput = "";
-        int expectedLogSize = 11;
+		String testLogPath = "src/test/resources/log.txt";
+
+		String expectedOutput = "";
+		int expectedLogSize = 11;
 
 		List<String> logData = logReader.read(testLogPath);
 		String actualOutput = outContent.toString();
